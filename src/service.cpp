@@ -7,26 +7,26 @@
 /******************************************************************************************************************************/
 BOOL ServiceInstall(LPCTSTR ServiceName, LPCTSTR BinaryPathName, DWORD dwServiceType, DWORD dwStartType)
 {
-	SC_HANDLE	SchSCManager;
-	SC_HANDLE   schService;
-	DWORD		dwLastError;
-	SchSCManager = OpenSCManager(NULL, NULL, SC_MANAGER_ALL_ACCESS);
-	if (SchSCManager == NULL)
-		return FALSE;
-    schService = CreateService (SchSCManager,          // SCManager database
-								ServiceName,           // name of service
-								ServiceName,           // name to display
-                                SERVICE_ALL_ACCESS,    // desired access
-								dwServiceType,		   // service type
-								dwStartType,           // start type
-                                SERVICE_ERROR_NORMAL,  // error control type
-								BinaryPathName,        // service's binary
-                                NULL,                  // no load ordering group
-                                NULL,                  // no tag identifier
-                                NULL,                  // no dependencies
-                                NULL,                  // LocalSystem account
-                                NULL                   // no password
-                                );
+   SC_HANDLE	SchSCManager;
+   SC_HANDLE    schService;
+   DWORD	dwLastError;
+   SchSCManager = OpenSCManager(NULL, NULL, SC_MANAGER_ALL_ACCESS);
+   if (SchSCManager == NULL)
+	   return FALSE;
+   schService = CreateService (SchSCManager,          // SCManager database
+			       ServiceName,           // name of service
+			       ServiceName,           // name to display
+                               SERVICE_ALL_ACCESS,    // desired access
+			       dwServiceType,	       // service type
+			       dwStartType,           // start type
+                               SERVICE_ERROR_NORMAL,  // error control type
+			       BinaryPathName,        // service's binary
+                               NULL,                  // no load ordering group
+                               NULL,                  // no tag identifier
+                               NULL,                  // no dependencies
+                               NULL,                  // LocalSystem account
+                               NULL                   // no password
+                               );
 
     if (schService == NULL)
     {
@@ -45,12 +45,12 @@ BOOL ServiceInstall(LPCTSTR ServiceName, LPCTSTR BinaryPathName, DWORD dwService
 /******************************************************************************************************************************/
 BOOL ServiceRemove(LPCTSTR ServiceName)
 {
-	SC_HANDLE	SchSCManager;
+    SC_HANDLE	SchSCManager;
     SC_HANDLE	schService;
-	DWORD		dwLastError;
-	SchSCManager = OpenSCManager(NULL, NULL, SC_MANAGER_ALL_ACCESS);
-	if (SchSCManager == NULL)
-		return FALSE;
+    DWORD	dwLastError;
+    SchSCManager = OpenSCManager(NULL, NULL, SC_MANAGER_ALL_ACCESS);
+    if (SchSCManager == NULL)
+	    return FALSE;
     schService = OpenService (SchSCManager,ServiceName,SERVICE_ALL_ACCESS);
     if (schService == NULL)
     {
@@ -123,13 +123,13 @@ BOOL ServiceStart(LPCSTR ServiceName)
 /******************************************************************************************************************************/
 BOOL ServiceStop(LPCTSTR ServiceName)
 {
-	SC_HANDLE		SchSCManager;
+    SC_HANDLE		SchSCManager;
     SC_HANDLE		schService;
-	DWORD			dwLastError;
+    DWORD		dwLastError;
     SERVICE_STATUS	serviceStatus;
-	SchSCManager = OpenSCManager(NULL, NULL, SC_MANAGER_ALL_ACCESS);
-	if (SchSCManager == NULL)
-		return FALSE;
+    SchSCManager = OpenSCManager(NULL, NULL, SC_MANAGER_ALL_ACCESS);
+    if (SchSCManager == NULL)
+	    return FALSE;
     schService = OpenService (SchSCManager,ServiceName,SERVICE_ALL_ACCESS);
     if (schService == NULL)
     {
