@@ -172,6 +172,7 @@ int GetDesktopWidth();
 int GetDesktopHeight();
 int GetDesktopDepth();
 int GetDesktopRefresh();
+/******************************************************************************************************************************/
 int GetSEC();
 int GetMIN();
 int GetHOUR();
