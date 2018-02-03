@@ -1841,8 +1841,8 @@ int GetDesktopRefresh()
 /******************************************************************************************************************************/
 int GetSEC()
 {
-	time_t 		long_time;
-	tm  		*newtime;
+	time_t	long_time;
+	tm	*newtime;
 	time(&long_time);
 	newtime = localtime(&long_time);
 	return int(newtime->tm_sec);
@@ -1852,8 +1852,8 @@ int GetSEC()
 /******************************************************************************************************************************/
 int GetMIN()
 {
-	time_t 		long_time;
-	tm  		*newtime;
+	time_t	long_time;
+	tm  	*newtime;
 	time(&long_time);
 	newtime = localtime(&long_time);
 	return int(newtime->tm_min);
@@ -1863,8 +1863,8 @@ int GetMIN()
 /******************************************************************************************************************************/
 int GetHOUR()
 {
-	time_t 		long_time;
-	tm		 	*newtime;
+	time_t	long_time;
+	tm	*newtime;
 	time(&long_time);
 	newtime = localtime(&long_time);
 	return int(newtime->tm_hour);
@@ -1874,8 +1874,8 @@ int GetHOUR()
 /******************************************************************************************************************************/
 int GetMDAY()
 {
-	time_t 		long_time;
-	tm		  	*newtime;
+	time_t 	long_time;
+	tm	*newtime;
 	time(&long_time);
 	newtime = localtime(&long_time);
 	return int(newtime->tm_mday);
@@ -1885,8 +1885,8 @@ int GetMDAY()
 /******************************************************************************************************************************/
 int GetMON()
 {
-	time_t 		long_time;
-	tm		  	*newtime;
+	time_t 	long_time;
+	tm	*newtime;
 	time(&long_time);
 	newtime = localtime(&long_time);
 	return int(newtime->tm_mon + 1);
@@ -1896,8 +1896,8 @@ int GetMON()
 /******************************************************************************************************************************/
 int GetYEAR()
 {
-	time_t		long_time;
-	tm		  	*newtime;
+	time_t	long_time;
+	tm	*newtime;
 	time(&long_time);
 	newtime = localtime(&long_time);
 	return int(newtime->tm_year + 1900);
@@ -1907,8 +1907,8 @@ int GetYEAR()
 /******************************************************************************************************************************/
 int GetWDAY()
 {
-	time_t		long_time;
-	tm			*newtime;
+	time_t	long_time;
+	tm	*newtime;
 	time(&long_time);
 	newtime = localtime(&long_time);
 	return  int(newtime->tm_wday + 1);
@@ -1918,8 +1918,8 @@ int GetWDAY()
 /******************************************************************************************************************************/
 int GetYDAY()
 {
-	time_t		long_time;
-	tm  		*newtime;
+	time_t	long_time;
+	tm  	*newtime;
 	time(&long_time);
 	newtime = localtime(&long_time);
 	return int(newtime->tm_yday);
