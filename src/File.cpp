@@ -9,7 +9,7 @@ bool FileCopy(LPCSTR source, LPCSTR dest, DWORD flag)
 	HANDLE hAppend;
 	DWORD  dwBytesRead, dwBytesWritten, dwPos;
 	BYTE   buff[4096];
-	hFile = CreateFile(source,    // open One.txt
+	hFile = CreateFile(source,        // open One.txt
 		GENERIC_READ,             // open for reading
 		0,                        // do not share
 		NULL,                     // no security
@@ -18,7 +18,7 @@ bool FileCopy(LPCSTR source, LPCSTR dest, DWORD flag)
 		NULL);                    // no attr. template
 	if (hFile == INVALID_HANDLE_VALUE)
 		return FALSE;
-	hAppend = CreateFile(dest,    // open Two.txt
+	hAppend = CreateFile(dest,        // open Two.txt
 		GENERIC_WRITE,            // open for writing
 		FILE_SHARE_READ,          // allow multiple readers
 		NULL,                     // no security
